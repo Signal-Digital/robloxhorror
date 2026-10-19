@@ -1,0 +1,39 @@
+{
+  "name": "PipsNightShift",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "Shared": {
+        "$path": "src/shared"
+      }
+    },
+    "ServerScriptService": {
+      "Server": {
+        "$path": "src/server"
+      }
+    },
+    "StarterPlayer": {
+      "$properties": {
+        "CameraMaxZoomDistance": 18
+      },
+      "StarterPlayerScripts": {
+        "Client": {
+          "$path": "src/client"
+        }
+      }
+    },
+    "Players": {
+      "$properties": {
+        "RespawnTime": 3
+      }
+    },
+    "Lighting": {
+      "$properties": {
+        "Technology": {
+          "Enum": 4
+        },
+        "ClockTime": 0.5
+      }
+    }
+  }
+}
