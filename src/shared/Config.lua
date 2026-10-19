@@ -110,15 +110,15 @@ Config.Badges = {
 
 -- Sounds: colle des IDs audio publics (Creator Store > Audio). Vide = muet.
 Config.Sounds = {
-	Jumpscare = "",
-	Ambience = "",
-	Chase = "",
-	MusicBox = "",
-	Pickup = "",
+	Jumpscare = "rbxassetid://85886764223766",
+	Ambience = "rbxassetid://108810664374030",
+	Chase = "rbxassetid://114014927939158",
+	MusicBox = "rbxassetid://130035322979488",
+	Pickup = "rbxassetid://131106226283410",
 	Fuse = "",
-	Capsule = "",
-	Heartbeat = "",
-	SixAM = "",
+	Capsule = "rbxassetid://91644626397818",
+	Heartbeat = "rbxassetid://86882580396922",
+	SixAM = "rbxassetid://94063034032939",
 }
 
 -- Data -------------------------------------------------------------------
