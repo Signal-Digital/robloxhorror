@@ -5518,8 +5518,34 @@ function Effects.Init(UI)
 	-- lobby shift board (live countdown)
 	local board = mapFolder and mapFolder:FindFirstChild("ShiftBoard", true)
 	local boardLabel = board and board:FindFirstChildOfClass("SurfaceGui") and board:FindFirstChildOfClass("SurfaceGui"):FindFirstChild("Label")
+	-- 3D lullaby on the music box: slows down as it unwinds
+	local boxPart = mapFolder and mapFolder:FindFirstChild("MusicBox", true)
+	local lullaby
+	local id = Config.Sounds.MusicBox
+	if boxPart and id and id ~= "" then
+		lullaby = Instance.new("Sound")
+		lullaby.Name = "Lullaby"
+		lullaby.SoundId = id:match("^rbxassetid://") and id or ("rbxassetid://" .. id)
+		lullaby.Looped = true
+		lullaby.Volume = 0.7
+		lullaby.RollOffMaxDistance = 70
+		lullaby.RollOffMinDistance = 8
+		lullaby.Parent = boxPart
+	end
+
 	local lastPhase = nil
 	Remotes.GameState.OnClientEvent:Connect(function(s)
+		if lullaby then
+			local on = s.Phase == "Night" and s.MusicBox ~= nil and s.MusicBox > 0
+			if on then
+				lullaby.PlaybackSpeed = 0.75 + 0.25 * (s.MusicBox / 100)
+				if not lullaby.IsPlaying then
+					lullaby:Play()
+				end
+			elseif lullaby.IsPlaying then
+				lullaby:Stop()
+			end
+		end
 		if boardLabel then
 			if s.Phase == "Intermission" then
 				boardLabel.Text = ("%s STARTS IN %d"):format(s.NightName, s.TimeLeft)
