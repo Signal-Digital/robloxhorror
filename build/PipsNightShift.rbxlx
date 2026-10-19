@@ -95,16 +95,16 @@ Config.GroupReward = 150
 
 -- Monetisation ------------------------------------------------------------
 Config.GamePasses = {
-	VIP = 0, -- x2 tickets, golden name tag
-	ProFlashlight = 0, -- battery lasts ~70% longer, brighter beam
-	LuckyCharm = 0, -- better Prize Counter odds
+	VIP = 2036698741, -- x2 tickets, golden name tag
+	ProFlashlight = 2039830566, -- battery lasts ~70% longer, brighter beam
+	LuckyCharm = 2036788810, -- better Prize Counter odds
 }
 
 Config.Products = {
-	Revive = 0, -- instant revive while a ghost
-	PowerSurge = 0, -- full battery + 1 soda for the WHOLE team (social purchase)
-	Tickets500 = 0,
-	Tickets2000 = 0,
+	Revive = 3720031906, -- instant revive while a ghost
+	PowerSurge = 3720032064, -- full battery + 1 soda for the WHOLE team (social purchase)
+	Tickets500 = 3720034343,
+	Tickets2000 = 3720034565,
 }
 
 Config.ProductRewards = {
